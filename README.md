@@ -8,3 +8,4 @@ I am using a Lenovo Yoga 300-11IBR to develop this game, which has the following
 </ul>
 The OS is Arch Linux with Cinnamon.
 I am using raylib and C++17.
+The challenge is to obtain 60+ FPS.
