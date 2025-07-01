@@ -1,15 +1,25 @@
 #include "raylib.h"
+#include "globals.h"
+#include "player.h"
+#include <iostream>
+#include <input.h>
 
-int main() {
-    InitWindow(800, 600, "Raylib + C++17 on Arch");
+int main()
+{
+	Player player = Player();
+    InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Low Power PC Game");
     
-    while (!WindowShouldClose()) {
+    while (!WindowShouldClose())
+    {
         BeginDrawing();
         ClearBackground(RAYWHITE);
-        DrawText("Hello Raylib!", 350, 280, 20, DARKGRAY);
+
+		player.DrawPlayer();
+		player.MovePlayer(GetPlayerInput(), Player::SPEED * GetFrameTime());
+		
         EndDrawing();
     }
-
+    
     CloseWindow();
     return 0;
 }
