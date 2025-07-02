@@ -13,15 +13,15 @@ namespace lppg
 		float x, y;
 		Vector2();
 		Vector2(float x, float y);
-		float magnitude();
-		Vector2 normalized();
-		float dot(const Vector2& other);
-		void print(bool newLine = true);
+		float magnitude() const;
+		Vector2 normalized() const;
+		float dot(const Vector2& other) const;
+		void print(bool newLine = true) const;
 		
-		Vector2 operator +(const Vector2& other);
-		Vector2 operator -(const Vector2& other);
-		Vector2 operator *(float other);
-		Vector2 operator /(float other);
+		Vector2 operator +(const Vector2& other) const;
+		Vector2 operator -(const Vector2& other) const;
+		Vector2 operator *(float other) const;
+		Vector2 operator /(float other) const;
 
 		Vector2 operator +=(const Vector2& other);
 		Vector2 operator -=(const Vector2& other);

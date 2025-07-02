@@ -2,27 +2,12 @@
 
 Player::Player()
 {
-	position = lppg::Vector2(WINDOW_WIDTH * 0.5f,
-							 WINDOW_HEIGHT * 0.5f);
+	position = lppg::Vector2(WINDOW_WIDTH * 0.5f, WINDOW_HEIGHT * 0.5f);
+	SetSpeed(8.0f);
 }
 
-void Player::DrawPlayer()
+void Player::Draw()
 {
 	static constexpr float RADIUS = 20.0f;
 	DrawCircle(position.x, position.y, RADIUS, RED);
-}
-
-void Player::MovePlayer(lppg::Vector2 newPosition)
-{
-	position = newPosition;
-}
-
-void Player::MovePlayer(lppg::Vector2 direction, float amount)
-{
-	position += direction.normalized() * amount;
-}
-
-const lppg::Vector2& Player::GetPosition()
-{
-	return position;
 }

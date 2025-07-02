@@ -14,12 +14,12 @@ namespace lppg
 		this->y = y;
 	}
 	
-	float Vector2::magnitude()
+	float Vector2::magnitude() const
 	{
 		return std::sqrt(x * x + y * y);
 	}
 	
-	Vector2 Vector2::normalized()
+	Vector2 Vector2::normalized() const
 	{
 		float mag = magnitude();
 		if (fabsf(mag) <= EPSILON)
@@ -29,12 +29,12 @@ namespace lppg
 		return *this / mag;
 	}
 	
-	float Vector2::dot(const Vector2& other)
+	float Vector2::dot(const Vector2& other) const
 	{
 		return x * other.x + y * other.y;
 	}
 
-	void Vector2::print(bool newLine)
+	void Vector2::print(bool newLine) const
 	{
 		std::cout << "x: " << x << ", y: " << y;
 		if (newLine)
@@ -47,17 +47,17 @@ namespace lppg
 		}
 	}
 	
-	Vector2 Vector2::operator +(const Vector2& other)
+	Vector2 Vector2::operator +(const Vector2& other) const
 	{
 		return Vector2(x + other.x, y + other.y);
 	}
 	
-	Vector2 Vector2::operator -(const Vector2& other)
+	Vector2 Vector2::operator -(const Vector2& other) const
 	{
 		return Vector2(x - other.x, y - other.y);
 	}
 	
-	Vector2 Vector2::operator *(float other)
+	Vector2 Vector2::operator *(float other) const
 	{
 		return Vector2(x * other, y * other);
 	}
@@ -67,7 +67,7 @@ namespace lppg
 		return Vector2(vector.x * scalar, vector.y * scalar);
 	}
 	
-	Vector2 Vector2::operator /(float other)
+	Vector2 Vector2::operator /(float other) const
 	{
 		if (fabsf(other) <= EPSILON)
 		{

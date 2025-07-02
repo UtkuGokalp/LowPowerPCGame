@@ -19,8 +19,8 @@ int main()
         BeginDrawing();
         ClearBackground(RAYWHITE);
 
-		player.DrawPlayer();
-		player.MovePlayer(GetPlayerInput(), Player::SPEED * GetFrameTime());
+		player.Draw();
+		player.Move(GetPlayerInput(), player.GetSpeed() * GetFrameTime());
 		
         EndDrawing();
 
@@ -58,4 +58,3 @@ int main()
     CloseWindow();
     return 0;
 }
-;
